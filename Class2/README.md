@@ -377,6 +377,90 @@ WHERE rating = 1;  -- Only deletes Toby's row
 | Safe Updates | `UPDATE ... WHERE` | Never omit WHERE in UPDATE |
 | Safe Deletes | `DELETE ... WHERE` | Always SELECT first to verify |
 
+# ------------------------------------------------------------------------------------------------------------------------
+\
+
+**Scenario:**
+You have just joined the Data Analytics team at **QuickCart**, a growing e-commerce platform. The Customer Support Manager is overwhelmed with thousands of feedback entries. They need you to extract specific insights from the `customer_feedback` table to improve service quality and address urgent issues.
+
+Your goal is to write SQL queries using various `WHERE` clause techniques to filter the data according to the manager’s requests.
+
+---
+
+### 🛠️ Instructions for Students
+
+1.  **Create the Database:** Create a new database named `quickcart_db`.
+2.  **Create the Table:** Write the `CREATE TABLE` statement for `customer_feedback` based on the schema provided below. Ensure you include appropriate constraints (e.g., `PRIMARY KEY`, `NOT NULL`, `CHECK` for rating).
+3.  **Insert Data:** Copy and run the provided `INSERT` code to populate your table.
+4.  **Solve the Challenges:** Write the SQL queries for each of the 7 challenges listed below.
+
+---
+
+### 💻 Step 1 & 2: Create Table (Student's Responsibility)
+*Students must write this themselves based on these requirements:*
+*   **Table Name:** `customer_feedback`
+*   **Columns:**
+    *   `id`: Integer, Primary Key, Auto Increment.
+    *   `customer_name`: Variable Character (50), Not Null.
+    *   `email`: Variable Character (100), Not Null.
+    *   `rating`: Integer, Not Null, Check constraint (1-5).
+    *   `comment`: Variable Character (255).
+    *   `submission_date`: Date or Timestamp.
+    *   `issue_type`: Variable Character (50) (e.g., 'Delivery', 'Product', 'Billing', 'Support').
+
+---
+
+### 💾 Step 3: Insert Data (Provide this code to students)
+
+```sql
+-- Switch to the database
+USE quickcart_db;
+
+-- Insert diverse real-life feedback data
+INSERT INTO customer_feedback (customer_name, email, rating, comment, submission_date, issue_type) VALUES
+('Ammad Karar', 'ammad.k@example.com', 5, 'Fast delivery and great packaging!', '2023-10-01', 'Delivery'),
+('Sarah Jenkins', 'sarah.j@example.com', 2, 'Item arrived damaged.', '2023-10-02', 'Product'),
+('Tiffany Lee', 'tiffany.l@example.com', 4, 'Good product, but late response from support.', '2023-10-03', 'Support'),
+('Mike Ross', 'mike.r@example.com', 1, 'Terrible experience. Wrong item sent.', '2023-10-05', 'Product'),
+('Tanya Foy', 'tanya.f@example.com', 5, 'Best customer service ever!', '2023-10-06', 'Support'),
+('Alice Wong', 'alice.w@example.com', 3, 'Average quality, expected better.', '2023-10-07', 'Product'),
+('Tommy Hill', 'tommy.h@example.com', 4, 'Quick refund process.', '2023-10-08', 'Billing'),
+('France User', 'france.u@example.com', 2, 'Delivery was delayed by a week.', '2023-10-10', 'Delivery'),
+('Toby Mac', 'toby.m@example.com', 1, 'Rude support agent.', '2023-10-12', 'Support'),
+('Linda Green', 'linda.g@example.com', 5, 'Will definitely buy again.', '2023-10-15', 'Product');
+```
+
+---
+
+### 🎯 Step 4: The Challenges (Student Tasks)
+
+Write a single SQL query for each of the following requests from the Support Manager:
+
+**Challenge 1: Basic Filtering (Exact Match)**
+> "I need a list of all customers who gave us a perfect **5-star rating**."
+
+**Challenge 2: Multiple Conditions (AND)**
+> "Show me feedback from **'Tiffany Lee'** where she specifically rated us **4 or higher**." *(Note: Encourage use of parentheses)*
+
+**Challenge 3: Mathematical & Date Operators**
+> "Find all feedback submitted **after October 5th, 2023**, that has a rating **greater than 3**."
+
+**Challenge 4: Logical Choices (OR + AND)**
+> "We need to prioritize high-value customers. Show me feedback with a **rating of 5** from either **'Ammad Karar'** OR **'Tanya Foy'**."
+> *⚠️ Reminder: Group your OR conditions in parentheses!*
+
+**Challenge 5: Pattern Matching (LIKE)**
+> "I want to see if any customers with names starting with **'T'** left comments. List their names and comments."
+> *Bonus: Try to find names starting with 'T' and ending with 'y'.*
+
+**Challenge 6: Filtering Lists (IN)**
+> "Instead of writing multiple OR statements, give me all feedback where the `issue_type` is either **'Product'** or **'Billing'**."
+
+**Challenge 7: Safe DML Practice (UPDATE/DELETE)**
+> "We identified that **Mike Ross's** feedback (ID 4) was resolved personally. 
+> 1. First, write a `SELECT` query to verify his row.
+> 2. Then, write an `UPDATE` query to change his `rating` to **4** and his `comment` to **'Issue resolved via phone call'**."
+> *⚠️ Warning: Do NOT forget the WHERE clause!*
 
 
 
