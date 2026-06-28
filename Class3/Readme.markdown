@@ -69,20 +69,16 @@ ORDER BY total_revenue DESC  -- Highest revenue first
 -- Q3: For each employee, calculate number of sales, total revenue, and average sale value. 
 --     Label columns clearly and sort results by highest revenue first.
 
--- Q4: Find employees who completed more than 20 sales in the last 6 months. 
---     Display their ID, recent sale count, and recent revenue.
 
--- Q5: List product IDs where total quantity sold exceeds 15 units. Sort by quantity descending.
 
--- Q6: Identify employees whose average sale value is above $800 (premium item sellers). 
+-- Q4: List product IDs where total quantity sold exceeds 15 units. Sort by quantity descending.
+
+-- Q5: Identify employees whose average sale value is above $800 (premium item sellers). 
 --     Show employee ID and their average sale value.
 
--- Q7: Find underperforming stores with total revenue below $30,000 AND fewer than 100 transactions. 
+-- Q6: Find underperforming stores with total revenue below $30,000 AND fewer than 100 transactions. 
 --     Show store ID, revenue, and transaction count.
 
--- Q8: Group sales by date and show daily total revenue, but only for days where revenue exceeded $2,000. 
---     Sort chronologically.
-
--- Q9: Look at bulk purchases (quantity > 2). Among these, find employees whose total bulk-sale revenue 
+-- Q7: Look at bulk purchases (quantity > 2). Among these, find employees whose total bulk-sale revenue 
 --     exceeds $5,000. Include bulk sale count and total bulk revenue, sorted by revenue descending.
 ```
