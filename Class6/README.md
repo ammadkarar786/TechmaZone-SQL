@@ -6,9 +6,6 @@
 
 ### 1. The Core Concept
 
-Start by explaining *why* we combine Python and database triggers. Beginners often wonder: *"If I can write Python code to log changes, why do I need database triggers?"*
-
-Explain the **Division of Responsibilities**:
 
 * **Python (Application Layer):** Handles user interfaces, API requests, business logic, and calling the database.
 * **SQLite Triggers (Database Layer):** Acts as the **ultimate safety net**. Even if a bug exists in Python, or another developer connects directly to the database, the trigger executes **automatically**.
