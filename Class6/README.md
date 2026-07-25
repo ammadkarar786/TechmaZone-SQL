@@ -194,7 +194,7 @@ except sqlite3.IntegrityError as e:
 
 ---
 
-## Step 6: Recap & Key Takeaways (10 Minutes)
+## Step 6: Recap & Key Takeaways
 
 Conclude the class by reviewing these three golden rules of Data Engineering:
 
